@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+<data>
+
+
+  <!-- Vue form mrp.bom.line -->
+<!--
+  <record model="ir.ui.view" id="is_mrp_bom_line_form_view" >
+        <field name="name">is.mrp.bom.line.form</field>
+        <field name="model">mrp.bom.line</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view" />
+        <field name="arch" type="xml">
+          <field name="hour_nbr" position="replace" > 
+            <field name="seconds_nbr" />
+          </field>
+         </field>
+    </record>    
+-->
+
+  <!-- Vue tree de la gamme -->
+<!--
+  <record model="ir.ui.view" id="is_mrp_routing_workcenter_tree_view" >
+        <field name="name">is.mrp.routing.workcenter.tree</field>
+        <field name="model">mrp.routing.workcenter</field>
+        <field name="type">tree</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_workcenter_tree_view" />
+        <field name="arch" type="xml">
+          <field name="cycle_nbr" position="after" > 
+            <field name="seconds_nbr" /> 
+          </field>
+         </field>
+    </record>    
+-->
+
+  <!-- Action pour accèder aux lignes des nomenclatures pour l'importation -->
+  <record model="ir.actions.act_window" id="action_is_mrp_bom_line">
+    <field name="name">action_is_mrp_bom_line</field>
+    <field name="res_model">mrp.bom.line</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Menu pour accèder aux lignes des gammes -->
+
+  <menuitem id="menu_is_mrp_bom_line" sequence="10" name="Lignes de nomenclatures" parent="mrp.menu_mrp_bom_form_action" action="action_is_mrp_bom_line" />
+
+
+
+</data>
+</openerp>
